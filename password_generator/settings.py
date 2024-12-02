@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-dy-e=9khxw-u0fek*#^0ni!t#*9hl6i4q36#xo0ha_2s76ep&l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['a22ivancp.pythonanywhere.com']
 
 
 # Application definition
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'portfolio',
-    
+
 ]
 
 MIDDLEWARE = [
@@ -121,8 +121,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
-MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
