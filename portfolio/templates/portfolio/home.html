@@ -1,0 +1,44 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="row justify-content-center my-3">
+  <div class="col-5">
+    <img src="{% static 'portfolio/ivanPicture.jpg' %}" class="img-fluid">
+  </div>
+</div>
+
+<div class="row justify-content-center mb-3">
+  <div class="col-md-9 text-center">
+    <h1 id="hometext" class="font-weight-bold">Iván Cabaleiro is an object-oriented programmer, student at IES SanClemente.</h1>
+  </div>
+</div>
+<h2 class="mt-5">Portfolio</h2>
+<hr>
+<div class="row d-flex justify-content-around">
+  {% for project in projects %}
+  <div class="card" style="width: 18rem">
+
+    <img src="{{ project.image.url }}" class="card-img-top">
+
+    <div class ="card-body">
+      <h3 class="card-title">{{ project.title }}</h3>
+      <p class="card-text">{{ project.description }}</p>
+
+      {% if project.url %}
+
+      <a role="button" href="{{project.url}}" class="btn btn-primary" target="_blank">Go to project</a>
+
+      {% else %}
+
+      <button class="btn btn-secondary" disabled>Projet inaccessible</button>
+
+      {% endif %}
+    </div>
+
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
